@@ -1,0 +1,45 @@
+.valute-list{
+
+    &__item{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+
+        padding: 15.5px 0;
+
+        border-bottom: 0.60px solid var(--br-a);
+
+        &.head{
+            padding: 14px 0;
+            border-top: 1px solid var(--br-f);
+            border-bottom: 1px solid var(--br-f);
+        }
+    }
+
+    &__text{
+        font-family: var(--font-family);
+        font-weight: 600;
+        font-size: clamp(20px, 1.8056vw, 26px);
+        line-height: 130%;
+        letter-spacing: -0.02em;
+        text-align: center;
+        color: var(--cl-g);
+    }
+
+    &__value{
+        font-family: var(--third-family);
+        font-weight: 400;
+        font-size: clamp(16px, 1.3889vw, 20px);
+        line-height: 130%;
+        text-align: center;
+        color: var(--cl-e);
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        grid-gap: 5px;
+
+        svg,img{
+            width: 20px;
+            height: 14px;
+        }
+    }
+}

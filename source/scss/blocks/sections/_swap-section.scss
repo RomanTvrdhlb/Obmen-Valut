@@ -7,5 +7,15 @@
         grid-gap: clamp(35px, 4.1667vw, 60px);
     }
 
+    &__inner{
+        display: grid;
+        grid-template-columns: 1fr .785fr;
+        grid-gap: clamp(20px, 1.7361vw, 25px);
+        padding: 20px clamp(20px, 2.7778vw, 40px) clamp(20px, 2.7778vw, 40px);
+
+        border-radius: 20px;
+        box-shadow: 0 -4px 74px -8px rgba(12, 12, 13, 0.4);
+        background: #41394d;
+    }
     
 }

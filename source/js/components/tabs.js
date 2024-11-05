@@ -44,7 +44,6 @@ const tabsFunction = function (
 
 document.addEventListener("DOMContentLoaded", function () {
   tabsFunction(document.querySelectorAll("[data-tabs-parrent]"), "data-tab", "data-tab-content");
-  tabsFunction(document.querySelectorAll("[data-inner-parrent]"), "data-inner-tab", "data-inner-content");
 });
 
 
