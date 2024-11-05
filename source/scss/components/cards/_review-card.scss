@@ -1,0 +1,55 @@
+.review-card{
+    padding: clamp(38px, 3.3333vw, 48px) clamp(32px, 3.6111vw, 52px) clamp(37px, 3.9583vw, 57px);
+    background: var(--bg-c);
+    border-radius: 45px;
+    border: 1px solid var(--br-d);
+    position: relative;
+    z-index: 1;
+    margin-bottom: clamp(23px, 2.0139vw, 29px);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    &::before{
+        position: absolute;
+        content: '';
+        width: 55px;
+        height: 29px;
+        top: 100%;
+        left: clamp(42px, 3.5417vw, 51px);
+        z-index: -1;
+        border-left: 28px solid transparent;
+        border-right: 28px solid transparent;
+        border-top: clamp(23px, 1.875vw, 27px) solid var(--bg-c);
+        pointer-events: none;
+    }
+
+    &::after{
+        position: absolute;
+        content: '';
+        width: 55px;
+        height: 29px;
+        top: 100%;
+        left: clamp(42px, 3.5417vw, 51px);
+        z-index: -2;
+        border-left: 29px solid transparent;
+        border-right: 29px solid transparent;
+        pointer-events: none;
+        border-top: clamp(24px, 1.9444vw, 28px) solid var(--br-d);
+    }
+
+    *{
+        color: var(--cl-e);
+    }
+
+    p{
+        line-height: 125%;
+        font-size: clamp(14px, 1.25vw, 18px);
+
+        display: -webkit-box;
+        -webkit-line-clamp: 15;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}

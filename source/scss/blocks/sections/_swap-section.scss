@@ -1,0 +1,11 @@
+.swap-section{
+    margin-bottom: clamp(40px, 4.1667vw, 60px);
+
+    &__box{
+        display: flex;
+        flex-direction: column;
+        grid-gap: clamp(35px, 4.1667vw, 60px);
+    }
+
+    
+}

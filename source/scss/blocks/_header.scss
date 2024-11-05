@@ -1,0 +1,117 @@
+.header {
+  left: 0;
+  right: 0;
+  position: absolute;
+  z-index: 30;
+  top: 0;
+  padding: clamp(15px, 2.0833vw, 30px) 0;
+  transition: all 0.4s .5s;
+  transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+
+  &.open-menu {
+    transition: background 0.2s;
+    transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+    background: var(--bg-f);
+  }
+
+  &__box {
+    display: grid;
+    position: relative;
+    z-index: 2;
+    align-items: center;
+
+    .main-btn {
+      padding: 16px clamp(15px, 1.8056vw, 26px);
+    }
+
+    @include for-laptop {
+      justify-content: space-between;
+    }
+
+    @include for-tablet {
+      grid-template-columns: auto 1fr auto auto;
+    }
+
+    @include for-tablet {
+      grid-gap: 20px;
+    }
+
+    @include tablet {
+      grid-template-columns: auto 1fr;
+      grid-gap: 10px;
+    }
+
+    @include laptop {
+      .transparent-btn {
+        padding: 16px clamp(20px, 1.7361vw, 25px);
+      }
+    }
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    z-index: 5;
+    justify-content: center;
+
+    ul {
+      display: flex;
+      align-items: center;
+      grid-gap: clamp(10px, 3.4722vw, 50px);
+
+      li {
+        display: flex;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+      }
+
+      a {
+        transition: all 0.3s linear;
+        display: flex;
+        align-items: center;
+        grid-gap: 5px;
+        position: relative;
+        font-family: var(--font-family);
+        font-weight: 600;
+        font-size: clamp(16px, 1.25vw, 18px);
+        line-height: 133%;
+        color: var(--cl-c);
+        white-space: nowrap;
+
+        &.active {
+          color: var(--cl-d);
+        }
+
+        &:hover {
+          color: var(--cl-d);
+        }
+      }
+    }
+
+    @include laptop {
+      @include for-tablet {
+        justify-content: center;
+      }
+    }
+
+    @include for-tablet{
+      padding-left: Min(8.333vw, 160px);
+    }
+  }
+
+  .burger {
+    justify-self: end;
+    @include for-tablet {
+      display: none;
+    }
+
+    @include tablet {
+      @include burger;
+    }
+  }
+
+  @include tablet {
+    padding: 15px 0;
+  }
+}

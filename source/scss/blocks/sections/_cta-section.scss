@@ -1,0 +1,55 @@
+.cta-section {
+  margin-bottom: clamp(45px, 4.8611vw, 70px);
+
+  &__box{
+    padding-bottom: Min(9.8611vw, 142px);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+    grid-gap: 24px;
+  }
+
+  &__image{
+    position: absolute;
+    z-index: -1;
+    display: flex;
+
+    svg,img{
+      width: Min(27.9861vw, 403px);
+      height: Min(22.4306vw, 323px);
+
+      height: 223px;
+    }
+
+    right: 170px;
+    bottom: 0;
+  }
+
+ 
+  .main-top{
+      grid-gap: 1px 20px;
+
+      .editor{
+        display: contents;
+
+        *{
+          grid-column: 1;
+        }
+      }
+
+      &__labels{
+        grid-column: 2;
+        grid-row: 1;
+        align-self: end;
+      }
+  
+      .main-btn{
+        margin-top: clamp(25px, 3.125vw, 45px);
+      }
+    }
+
+    & + .review-section{
+      margin-top: calc(clamp(45px, 4.8611vw, 70px) * -1);
+    }
+}

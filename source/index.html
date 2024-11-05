@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="Ru">
+@include('partials/head.html')
+
+<body>
+  @include('partials/header.html')
+
+  <main>
+
+    <section class="swap-section">
+      <div class="container">
+        <div class="swap-section__box">
+          <div class="main-top">
+            <div class="editor">
+              <h1>Обмінюйте валюту <i>вигідно</i></h1>
+              <p>Міняйте валюту з вигодою! Спеціальні умови для великих сум дозволяють заощадити ще більше при обміні.
+              </p>
+            </div>
+
+            <div class="main-top__labels">
+              <span class="main-top__label">#миттєвий розрахунок</span>
+              <span class="main-top__label white">#вигідні курси</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section">
+      <div class="container">
+        <div class="about-section__box">
+          <div class="main-top">
+            <div class="editor">
+              <h2>Про нас</h2>
+              <p>Ми – надійна мережа обмінних пунктів, що працює для вашої зручності та вигоди. Наша місія – забезпечити
+                клієнтів вигідними курсами валют і миттєвими розрахунками, надаючи високоякісне обслуговування.</p>
+              <p>Ми співпрацюємо з європейськими банками-партнерами, що дозволяє нам пропонувати конкурентоспроможні
+                умови для оптових клієнтів, знижки від $500 та вигідні курси для роздрібних покупців.</p>
+              <p><strong>Обирайте нас – і отримуйте найкращі умови обміну!</strong></p>
+            </div>
+
+            <div class="main-top__labels">
+              <span class="main-top__label">#європейські банки партнери</span>
+              <span class="main-top__label white">#гуртові знижки від $500</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-section__box">
+          <div class="main-top">
+            <div class="editor">
+              <h2><i>Переказ коштів</i> від наших партнерів <i>по Україні та світу</i></h2>
+
+              <p>Наші партнери забезпечують стабільні міжнародні транзакції, щоб ви могли бути впевнені у швидкому та
+                безпечному надходженні фінансів.</p>
+            </div>
+
+            <button class="main-btn">
+              Переказати
+              <svg width='20' height='20'>
+                <use href='img/sprite/sprite.svg#ArrowLeft'></use>
+              </svg>
+            </button>
+
+            <div class="main-top__labels">
+              <span class="main-top__label">#Без прихованих комісій</span>
+              <span class="main-top__label white">#Миттєвий обмін та зручність операцій</span>
+            </div>
+          </div>
+
+          <div class="cta-section__image">
+            <picture>
+              <source type='image/webp' srcset='img/index/card.webp'>
+              <img width='403' height='323' src='img/index/card.png' alt='image'>
+            </picture>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="review-section">
+      <div class="container">
+        <div class="review-section__box">
+          <div class="main-top">
+            <div class="editor">
+              <h2>Відгуки</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class='review-slider'>
+        <div class='swiper-container'>
+          <ul class='swiper-wrapper'>
+            <li class='swiper-slide' data-title="Фрілансер Андрій">
+              <div class="review-card editor">
+                <p>Як представник компанії, яка часто здійснює валютні операції, я можу сказати, що співпраця з цією
+                  фірмою – це завжди вигідно. Гуртові знижки та персональний менеджер – це великі плюси. До того ж, мене
+                  приваблює співпраця з європейськими банками-партнерами, що гарантує надійність і безпеку операцій.</p>
+              </div>
+            </li>
+            <li class='swiper-slide' data-title="Іван П.">
+              <div class="review-card editor">
+                <p>Мені потрібно було терміново відправити гроші за кордон. Звернувся до цієї компанії за рекомендацією
+                  друга і не пожалкував. Переказ пройшов швидко і без будь-яких проблем. Ціную зручність онлайн-сервісу
+                  і відсутність прихованих комісій.</p>
+              </div>
+            </li>
+            <li class='swiper-slide' data-title="Анонім">
+              <div class="review-card editor">
+                <p>Звертаюсь до цієї компанії вже не перший рік. Завжди отримую вигідний курс і швидке обслуговування.
+                  Особливо подобається, що є опції для великих сум, і при цьому зберігається конфіденційність.
+                  Рекомендую всім, хто шукає надійного партнера для обміну валют.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="review-slider__nav">
+          <button class='swiper-btn swiper-button-prev'>
+            <svg width='35' height='35'>
+              <use href='img/sprite/sprite.svg#caret-left'></use>
+            </svg>
+          </button>
+
+          <span class='swiper-pagination'></span>
+
+          <button class='swiper-btn swiper-button-next'>
+            <svg width='35' height='35'>
+              <use href='img/sprite/sprite.svg#caret-left'></use>
+            </svg>
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+
+ 
+  </main>
+
+  @include('partials/footer.html')
+  @include('partials/modals.html')
+  <script defer src="js/main.js"></script>
+</body>
+
+
+</html>
