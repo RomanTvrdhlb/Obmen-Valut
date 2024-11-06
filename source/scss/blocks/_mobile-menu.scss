@@ -40,7 +40,7 @@
   &__box {
     display: flex;
     flex-direction: column;
-    grid-gap: 32px;
+    grid-gap: 20px;
     width: 100%;
     align-items: center;
 
@@ -53,6 +53,7 @@
     .header__nav {
       width: 100%;
       flex-direction: column;
+      margin-bottom: 15px;
      
       &:only-child{
         flex-grow: 1;
@@ -67,7 +68,7 @@
         align-items: center;
         grid-gap: 24px;
 
-        a, .menu-button {
+        a{
           width: 100%;
           padding: 4px 0;
           justify-content: start;
@@ -78,31 +79,11 @@
             display: none;
           }
         }
-
-        .menu-button{
-          width: fit-content;
-          justify-content: space-between;
-
-          svg,img{
-            display: none;
-          }
-        }
-
-        .menu-item-has-children{
-          width: 100%;
-        }
       }
+    }
 
-      .sub-menu{
-        flex-direction: row;
-        align-items: center;
-      }
-
-
-      .menu-item-has-children{
-        padding-top: 32px;
-        border-top: solid 1px var(--br-c);
-      }
+    .main-btn, .transparent-btn{
+      width: 100%;
     }
   }
 }

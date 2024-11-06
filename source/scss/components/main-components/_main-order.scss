@@ -1,0 +1,14 @@
+.main-order{
+    display: flex;
+    flex-direction: column;
+    grid-gap: 15px;
+
+    &__text{
+        font-family: var(--font-family);
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 185%;
+        text-align: center;
+        color: var(--cl-k);
+    }
+}

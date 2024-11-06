@@ -9,18 +9,10 @@ export default {
   footer: document.querySelector('footer'),
 
   mainSliders: document.querySelectorAll('.review-slider'),
-
-  
-  infoSliders: document.querySelectorAll('.info-slider'),
-  cookingSliders: document.querySelectorAll('.cooking-slider'),
-  parentSliders: document.querySelectorAll('.product-slider'),
-  filterBtn: document.querySelector('[data-aside-btn]'),
-  filterAside: document.querySelector('.product-section__aside'),
-
+  mainForms: document.querySelectorAll('.main-form'),
   burger: document.querySelectorAll('.burger'),
   mobileMenu: document.querySelector('.mobile'),
   overlay: document.querySelector('[data-overlay]'),
   modals: [...document.querySelectorAll('[data-popup]')],
-  modalsMode: [...document.querySelectorAll('[data-mode-modal]')],
   modalsButton: [...document.querySelectorAll("[data-btn-modal]")],
 }

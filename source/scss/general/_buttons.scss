@@ -75,6 +75,7 @@
 
   img,
   svg {
+    pointer-events: none;
     display: flex;
     width: 20px;
     aspect-ratio: 1;
@@ -100,14 +101,14 @@
   transition: all 0.4s;
   background: transparent;
   border-radius: 20px;
-  padding: 16px clamp(15px, 3.8889vw, 56px);
+  padding: 16px clamp(15px, 3.9583vw, 57px);
   height: clamp(50px, 4.1667vw, 60px);
   display: flex;
   align-items: center;
   justify-content: center;
   grid-gap: 10px;
   width: fit-content;
-  font-family: var(--font-family);
+  font-family: var(--font3);
   font-weight: 600;
   font-size: 16px;
   line-height: 150%;
@@ -169,9 +170,6 @@
 
   position: absolute;
   z-index: 15;
-
-  
-  
 
   @media (min-width: (1750px)) {
     transform: translate(100%, -100%);

@@ -9,13 +9,44 @@
 
     &__inner{
         display: grid;
-        grid-template-columns: 1fr .785fr;
-        grid-gap: clamp(20px, 1.7361vw, 25px);
+        grid-gap: 40px clamp(20px, 1.7361vw, 25px);
         padding: 20px clamp(20px, 2.7778vw, 40px) clamp(20px, 2.7778vw, 40px);
-
-        border-radius: 20px;
+        border-radius: clamp(16px, 1.3889vw, 20px);
         box-shadow: 0 -4px 74px -8px rgba(12, 12, 13, 0.4);
-        background: #41394d;
+        background: var(--bg-g);
+
+        @include for-laptop{
+            grid-template-columns: 1fr .785fr;
+        }
+
+        @include laptop{
+            @include for-tablet{
+                grid-template-columns: 1fr .65fr;
+            }
+        }   
+
+        @include tablet{
+            grid-template-columns: 100%;
+
+            .main-valute{
+                order: -1;
+            }
+        }
+    }
+
+    .main-top{
+        .editor{
+            h1,h2,h3,h4,h5,h6{
+                margin-bottom: 5px;
+            }
+        }
     }
     
+    @include for-tablet{
+        padding-top: clamp(20px, 5.1389vw, 74px);
+    }
+
+    @include tablet{
+        padding-top: clamp(15px, 1.953vw, 20px);
+    }
 }

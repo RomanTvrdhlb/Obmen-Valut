@@ -2,7 +2,7 @@
   margin-bottom: clamp(45px, 4.8611vw, 70px);
 
   &__box{
-    padding-bottom: Min(9.8611vw, 142px);
+    padding-bottom: clamp(50px, 9.8611vw, 142px);
     display: flex;
     flex-direction: column;
     position: relative;
@@ -14,38 +14,69 @@
     position: absolute;
     z-index: -1;
     display: flex;
+    bottom: 0;
 
     svg,img{
-      width: Min(27.9861vw, 403px);
-      height: Min(22.4306vw, 323px);
+      width: clamp(171px, 27.9861vw, 403px);
+      height: clamp(95px, 15.4861vw, 223px);
 
-      height: 223px;
     }
 
-    right: 170px;
-    bottom: 0;
+    @include for-small-tablet{
+      right: 170px;
+    }
+
+    @include small-tablet{
+      @include for-mobile{
+        right: clamp(5px ,7.813vw, 60px);
+      }
+    }
+
+    @include mobile{
+      right: 0;
+    }
   }
 
  
   .main-top{
-      grid-gap: 1px 20px;
-
       .editor{
-        display: contents;
+        @include for-small-tablet{
+          display: contents;
 
-        *{
-          grid-column: 1;
+          *{
+            grid-column: 1;
+          }
         }
       }
 
       &__labels{
-        grid-column: 2;
-        grid-row: 1;
-        align-self: end;
+        @include for-small-tablet{
+          grid-column: 2;
+          grid-row: 1;
+          align-self: end;
+          margin-bottom: clamp(16px, 1.25vw, 18px);
+        }
       }
-  
-      .main-btn{
-        margin-top: clamp(25px, 3.125vw, 45px);
+
+      @include for-desktop{
+        grid-template-columns: 1fr 0.62fr;
+      }
+
+      @include desktop{
+        @include for-tablet{
+          grid-template-columns: 1fr 0.7fr;
+        }
+      }
+      
+
+      @include tablet{
+        @include for-small-tablet{
+          grid-template-columns: 1fr .8fr;
+        }
+      }
+
+      @include for-small-tablet{
+        grid-gap: 1px 20px;
       }
     }
 

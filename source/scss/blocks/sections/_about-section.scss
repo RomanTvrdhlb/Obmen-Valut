@@ -1,6 +1,6 @@
 .about-section {
   margin-bottom: clamp(45px, 4.8611vw, 70px);
-  padding: clamp(50px, 6.25vw, 90px) 0;
+  padding: clamp(50px, 6.9444vw, 100px) 0;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
   background: var(--bg-d);
 
@@ -18,19 +18,34 @@
           }
       }
 
-      grid-gap: 1px 20px;
-
       .editor{
-        display: contents;
-
         *{
-          grid-column: 1;
+          @include for-small-tablet{
+            grid-column: 1;
+          }
+        }
+
+        @include for-small-tablet{
+          display: contents;
         }
       }
 
       &__labels{
-        grid-column: 2;
-        grid-row: 2/4;
+        @include for-small-tablet{
+          grid-column: 2;
+          grid-row: 2/4;
+          margin-top: -8px;
+        }
+      }
+
+      @include tablet{
+        @include for-small-tablet{
+          grid-template-columns: 1fr .7fr;
+        }
+      }
+
+      @include for-small-tablet{
+        grid-gap: 1px 20px;
       }
   }
 
@@ -67,9 +82,4 @@
       color: var(--cl-f);
     }
   }
-
-  
-
-  
- 
 }

@@ -1,8 +1,9 @@
 .review-section {
   margin-bottom: clamp(45px, 4.8611vw, 70px);
-  padding: clamp(50px, 6.25vw, 90px) 0 clamp(40px, 4.1667vw, 60px);
+  padding: clamp(50px, 7.2917vw, 105px) 0 clamp(40px, 3.8194vw, 55px);
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
   background: var(--bg-d);
+  overflow: hidden;
  
 
   .main-top {
@@ -70,6 +71,6 @@
   }
 
   .review-slider{
-    margin-top: clamp(45px, 4.1667vw, 60px);
+    margin-top: clamp(45px, 4.8611vw, 70px);
   }
 }

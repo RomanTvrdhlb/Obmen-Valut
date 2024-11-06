@@ -3,12 +3,11 @@
     flex-direction: column;
     grid-gap: clamp(30px, 2.7778vw, 40px);
 
-
     &::before{
         content: attr(data-title);
         display: block;
         border-bottom: 2px solid var(--br-b);
-        padding: 0px 0px 5px 0px;
+        padding: 0px 0px 1px 0px;
         font-family: var(--font-family);
         font-weight: 700;
         font-size: clamp(24px, 2.5694vw, 37px);
@@ -16,17 +15,31 @@
         letter-spacing: -0.02em;
         color: var(--cl-c);
         width: fit-content;
-        align-self: flex-end;
-        margin-right: 30px;
+
+        @include for-tablet{
+            align-self: flex-end;
+            margin-right: 30px;
+        }
+
+        @include tablet{
+            align-self: center;
+        }
     }
 
     &__box{
       display: flex;
       flex-direction: column;
         background: var(--bg-c);
-        border-radius: 20px;
+        border-radius: clamp(16px, 1.3889vw, 20px);
         overflow: hidden;
-        padding-bottom: 4px;
+    }
+
+    &__pretitle{
+        font-family: var(--font-family);
+        font-weight: 600;
+        font-size: 15px;
+        text-align: center;
+        color: var(--cl-a);
     }
 
     &__btn{
@@ -34,7 +47,7 @@
         align-items: center;
         justify-content: center;
         grid-gap: clamp(10px, 1.0417vw, 15px);
-        padding: 19px 10px 16px;
+        padding: 19px 10px;
         box-shadow: 35px 30px 48px 0 rgba(51, 102, 255, 0.05);
         background: rgba(127, 255, 146, 0.25);
         font-family: var(--font-family);
@@ -47,7 +60,7 @@
 
         svg,img{
             width: 24px;
-            height: 24px;
+            height: auto;
         }
 
         &:hover{

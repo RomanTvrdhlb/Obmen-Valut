@@ -15,10 +15,11 @@
         @include small-tablet{
             flex-wrap: wrap;
             align-items: center;
+            order: -1;
         }
 
         @include for-mobile{
-            grid-gap: 15px 20px;
+            grid-gap: 20px;
         }
 
         @include mobile{
@@ -29,13 +30,12 @@
     &__label{
         font-family: var(--font-family);
         font-weight: 600;
-        font-size: clamp(16px, 1.5972vw, 23px);
+        font-size: clamp(15px, 1.5972vw, 23px);
         line-height: 104%;
-        text-align: center;
         color: var(--cl-d);
         border: 2px solid var(--br-a);
         border-radius: 20px;
-        padding: 4px clamp(15px, 1.4583vw, 21px);
+        padding: 4px clamp(15px, 1.875vw, 27px);
         width: fit-content;
 
         &.white{
@@ -46,12 +46,18 @@
     }
 
     .editor{
+       
         p{
             font-weight: 600;
         }
-    }
 
+        @include small-tablet{
+            order: -2;
+        }
+    }
+ 
     .main-btn{
+        margin-top: clamp(15px, 3.125vw, 45px);
         grid-column: 1;
     }
 

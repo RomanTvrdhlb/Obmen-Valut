@@ -13,9 +13,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const mainSwiper = new Swiper(container, {
       spaceBetween: 30,
       slidesPerView: 'auto',
-     
       loop: true,
-      speed: 1800,
+      speed: 1400,
       watchOverflow: true,
       observer: true,
       observeParents: true,

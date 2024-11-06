@@ -19,11 +19,16 @@ const tabsFunction = function (
         const tabContent = [
           ...tabParent.querySelectorAll(`[${tabsContentAttr}]`),
         ];
+        const tabButton = tabParent.querySelector("[data-tab-btn]");
 
         tabNav.map((nav) => {
           nav.addEventListener("click", (e) => {
+         
+            if (e.target.tagName === "A") return;
+
             e.preventDefault();
-            const activeTabAttr = e.target.getAttribute(`${tabsNavAttr}`);
+            const activeTabAttr = e.currentTarget.getAttribute(`${tabsNavAttr}`);
+           
             removeClassInArray(tabNav, active);
             removeClassInArray(tabContent, active);
             addCustomClass(
@@ -38,6 +43,27 @@ const tabsFunction = function (
             );
           });
         });
+
+        if (tabButton) {
+          tabButton.addEventListener("click", () => {
+            const activeIndex = tabNav.findIndex((nav) =>
+              nav.classList.contains(active)
+            );
+            const newIndex = activeIndex === 0 ? 1 : 0;
+
+            const newActiveTabAttr = tabNav[newIndex].getAttribute(tabsNavAttr);
+
+            removeClassInArray(tabNav, active);
+            removeClassInArray(tabContent, active);
+            addCustomClass(tabNav[newIndex], active);
+            addCustomClass(
+              tabParent.querySelector(
+                `[${tabsContentAttr}="${newActiveTabAttr}"]`
+              ),
+              active
+            );
+          });
+        }
       }
     });
 };

@@ -3,103 +3,181 @@
   flex-direction: column;
   align-items: center;
   grid-gap: 24px;
-  border-radius: clamp(20px, 1.8229vw, 28px);
+  border-radius: clamp(16px, 1.3889vw, 20px);
   z-index: 1;
-  max-width: clamp(520px, 32.0964vw, 493px);
-  padding: clamp(24px, 2.6042vw, 40px) clamp(20px, 2.381vw, 64px);
+  max-width: clamp(720px, 82.2222vw, 1184px);
+  padding: clamp(35px, 4.7917vw, 69px) clamp(24px, 4.1667vw, 60px) clamp(30px, 4.1667vw, 60px);
   width: 91vw;
-  background-color: var(--bg-a);
-  overflow: hidden;
+  box-shadow: 0 -4px 74px -8px rgba(12, 12, 13, 0.4);
+  background: var(--bg-f);
 
+  &__top{
+    display: flex;
+    align-items: center;
+    grid-gap: 15px;
+    justify-content: space-between;
+    width: 100%;
+
+    @include for-mobile{
+      padding: 0 10px;
+    }
+  }
 
   &__box {
     display: flex;
     flex-direction: column;
     align-items: center;
-    grid-gap: clamp(20px, 1.5625vw, 24px);
+    grid-gap: clamp(26px, 2.7778vw, 40px);
     width: 100%;
   }
 
-  &__title{
-    font-weight: 800;
-    font-size: clamp(24px, 1.9531vw, 30px);
-    line-height: 120%;
-  }
+  &__inner{
+    width: 100%;
 
-  &__subtitle{
-    font-weight: 700;
-    font-size: clamp(22px, 1.9531vw, 30px);
-    line-height: 120%;
-  }
+    .editor{
+      padding: clamp(90px, 11.8056vw, 170px) 0 clamp(80px, 11.4583vw, 165px);
+      width: 100%;
+      
+      *{
+        text-align: center;
+      }
 
-  .main-form{
+      h1,h2,h3,h4,h5,h6{
+        font-size: clamp(36px, 4.5833vw, 66px);
+        font-weight: 800;
+        line-height: 110%;
+        letter-spacing: -0.02em;
+        line-height: 96%;
+      }
 
-    &__input{
-      border-radius: 8px;
-    }
-
-    .main-btn{
-      margin-top: 4px;
+      p{
+        font-weight: 600;
+        font-size: 15px;
+      }
     }
   }
 
   &__wrapp{
+    width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    grid-gap: 12px;
-    
-    .modal__subtitle{
-      padding-right: 15px;
-    }
-  }
-
-  &__image{
-    display: flex;
-    border-radius: clamp(8px, .7813vw, 12px);
-    overflow: hidden;
+    padding: clamp(24px, 2.7778vw, 40px) clamp(14px, 4.1667vw, 60px) clamp(24px, 2.0833vw, 30px);
+    border-radius: clamp(16px, 1.3889vw, 20px);
+    box-shadow: 0 -4px 74px -8px rgba(12, 12, 13, 0.4);
+    background: var(--bg-g);
 
     @include for-small-tablet{
-      width: clamp(300px, 28.9063vw, 444px);
-      height: clamp(300px, 24.2188vw, 372px);
+      grid-gap: clamp(40px, 4.1667vw, 60px);
     }
 
     @include small-tablet{
-      width: 100%;
-      height: clamp(180px, 45.139vw, 260px);
-      order: 2;
-    }
-
-    img,picture{
-      width: 100%;
-      height: 100%;
+      grid-gap: 25px;
     }
   }
 
-  &__inner{
-    padding: clamp(20px, 1.5625vw, 24px);
-    display: grid;
-    grid-gap: 20px clamp(1.3021vw, 2.6042vw, 40px);
-
-    @include for-small-tablet{
-      align-items: center;
-      grid-template-columns: clamp(300px, 28.9063vw, 444px) 1fr;
-    }
-
-    @include small-tablet{
-      grid-template-columns: 100%;
+  .socials{
+    @include for-mobile{
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+  
+      &::before{
+        width: fit-content;
+      }
     }
   }
 
-  &.info{
-    max-width: clamp(1000px, 78.125vw, 1200px);
-    padding: 0;
-    border-radius: clamp(24px, 1.8229vw, 28px);
+  .main-top{
+    .editor{
+      h1,h2,h3,h4,h5,h6{
+      font-size: clamp(30px, 4.5833vw, 66px);
+      font-weight: 800;
+      line-height: 96%;
+      letter-spacing: -0.02em;
+      margin-bottom: clamp(10px, 1.25vw, 18px);
+      }
+  
+      p{
+        color: var(--cl-a);
+        font-size: clamp(14px, 1.0417vw, 15px);
+      }
 
-
-    .close{
-        top: clamp(15px, 1.237vw, 19px);
-        right: clamp(15px, 1.237vw, 19px);
+      @include tablet{
+        @include for-small-tablet{
+          order: -2;
+  
+          *{
+            grid-column: initial;
+          }
+        }
+      }
     }
+
+    &__labels{
+      @include for-tablet{
+        justify-content: center;
+      }
+
+      @include tablet{
+        @include for-small-tablet{
+          flex-wrap: wrap;
+          align-items: center;
+          order: -1;
+          grid-column: initial;
+          flex-direction: row;
+          grid-row: initial;
+        }
+      }
+    }
+
+    @include for-tablet{
+      grid-template-columns: 1fr .85fr;
+    }
+
+    @include tablet{
+      @include for-small-tablet{
+        grid-template-columns: 100%;
+      }
+    }
+
+    @include mobile{
+      grid-gap: 14px;
+    }
+  }
+  
+  .main-valute{
+    grid-gap: 10px;
+    max-width: 864px;
+    width: 100%;
+    align-items: center;
+    align-self: center;
+    margin: calc(60px - clamp(26px, 2.7778vw, 40px)) 0 calc(clamp(70px, 6.25vw, 90px) - clamp(25px, 4.1667vw, 60px));
+
+    &::before{
+      align-self: center;
+      margin: 0;
+    }
+
+    &__box{
+      width: 100%;
+      margin-top: 14px;
+      border-radius: 10px;
+    }
+
+    .valute-list__item{
+      &:last-of-type{
+        margin-bottom: 5px;
+        border: none;
+      }
+    }
+
+    @include tablet{
+      margin-bottom: 0;
+    }
+  }
+
+
+  &.mode{
+    padding: clamp(25px, 2.7778vw, 40px) clamp(14px, 4.1667vw, 60px) clamp(25px, 4.1667vw, 60px);
   }
 }

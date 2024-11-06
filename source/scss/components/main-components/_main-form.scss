@@ -1,76 +1,148 @@
 .main-form {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-gap: 15px clamp(20px, 2.4306vw, 35px);
   width: 100%;
-  grid-gap: clamp(20px, 2.4306vw, 35px);
+  max-width: 706px;
+  align-self: center;
 
   &__label {
     width: 100%;
     position: relative;
+    z-index: 1;
 
     .wpcf7-form-control-wrap{
       width: 100%;
     }
   }
 
-  .main-btn {
-   align-self: center;
+  &__delete{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 15px;
+    z-index: 3;
+    width: 13px;
+    height: 13px;
 
-   @include mobile{
-    width: 100%;
-   }
+    svg,img{
+      width: 100%;
+      height: 100%;
+      transition: all .3s;
+    }
+
+    &:hover{
+      svg,img{
+        transform: scale(1.2);
+      }
+    }
   }
 
-  &__mess {
-    border-bottom: solid 1px var(--br-b);
-    height: 40px;
+  .main-btn {
+    justify-self: center;
+    grid-column: 1/-1;
+    margin-top: clamp(10px, 2.4306vw, 35px);
+    padding: 16px clamp(25px, 1.875vw, 27px);
+
+    @include mobile{
+      width: 100%;
+    }
+  }
+
+  &__field{
     display: flex;
+    flex-direction: column;
+    grid-gap: 2px;
     width: 100%;
-    padding: 6px 11px;
+  }
+
+  &__title{
     font-family: var(--font-family);
     font-weight: 400;
-    font-size: clamp(18px, 1.3194vw, 19px);
-    line-height: 139%;
-    color: var(--cl-c);
-    transition: all 0.3s;
-
-    &::placeholder {
-      font-family: var(--font-family);
-      font-weight: 400;
-      font-size: clamp(18px, 1.3194vw, 19px);
-      line-height: 139%;
-      color: var(--cl-f);
-    }
-
-    &:focus {
-      border-color: var(--cl-d);
-    }
+    font-size: 12px;
+    line-height: 130%;
+    letter-spacing: -0.02em;
+    color: var(--cl-d);
   }
 
   &__input {
-    border-bottom: solid 1px var(--br-b);
-    height: 40px;
-    display: flex;
+    border: 1px solid var(--br-c);
+    border-radius: 10px;
+    padding: 3px 35px 3px 15px;
     width: 100%;
-    height: fit-content;
-    padding: 6px 11px;
+    height: 55px;
+    display: flex;
     font-family: var(--font-family);
     font-weight: 400;
-    font-size: clamp(18px, 1.3194vw, 19px);
-    line-height: 139%;
-    color: var(--cl-c);
+    font-size: 17px;
+    line-height: 130%;
+    letter-spacing: -0.02em;
+    color: var(--cl-e);
     transition: all 0.3s;
+    background: var(--bg-a);
 
     &::placeholder {
       font-family: var(--font-family);
       font-weight: 400;
-      font-size: clamp(18px, 1.3194vw, 19px);
-      line-height: 139%;
-      color: var(--cl-f);
+      font-size: 17px;
+      line-height: 130%;
+      letter-spacing: -0.02em;
+      color: var(--cl-l);
     }
 
     &:focus {
-      border-color: var(--cl-d);
+      border-color: var(--br-a);
+    }
+  }
+
+  &__inner{
+    display: grid;
+    grid-template-columns: 1fr 105px;
+    align-items: center;
+    grid-gap: clamp(16px, 1.3889vw, 20px);
+    border: 1px solid var(--br-c);
+    border-radius: 10px;
+    padding: 0 0 0 15px;
+    width: 100%;
+    height: 55px;
+    background: var(--bg-a);
+
+    .main-form{
+      &__input{
+        background: transparent;
+        padding: 3px 35px 3px 0;
+        border: none;
+        height: fit-content;
+      }
+    }
+
+    .select{
+      border: none;
+      min-width: 85px;
+      width: fit-content;
+      justify-self: end;
+      height: 53px;
+      padding: 13.5px 15px 15.5px 0;
+
+      &__current{
+        font-family: var(--third-family);
+        font-size: 20px;
+        line-height: 130%;
+        text-transform: uppercase;
+        letter-spacing: normal;
+        color: var(--cl-e);
+      }
+
+      &__option{
+        font-family: var(--third-family);
+        font-size: 20px;
+        line-height: 130%;
+        text-transform: uppercase;
+        letter-spacing: normal;
+      }
+
+      &__body{
+        left: -17px;
+      }
     }
   }
 
@@ -86,6 +158,57 @@
       font-weight: 700;
       font-size: 14px;
       line-height: 140%;
+  }
+
+  @include for-small-tablet{
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include small-tablet{
+    grid-template-columns: 100%;
+  }
+
+  &.swap{
+    grid-gap: 15px clamp(42px, 3.4722vw, 50px);
+
+    .main-form{
+     
+      &__field{
+        &:first-of-type{
+          position: relative;
+          z-index: 3;
+
+          &::before{
+            z-index: 2;
+            position: absolute;
+            content: '';
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='46' height='45' fill='none'%3E%3Cpath fill='%23FEFAE9' d='M33.2115 10.4226c-.5469-.5469-.5469-1.4334 0-1.9803.5468-.5468 1.4334-.5468 1.9802 0l5.597 5.5971c.2557.2537.414.6053.414.994a1.395 1.395 0 0 1-.4101.9901l-5.6009 5.6008c-.5469.5469-1.4334.5469-1.9802 0-.5469-.5468-.5469-1.4334 0-1.9802l3.2105-3.2105H17.3989c-.7733 0-1.4002-.6269-1.4002-1.4003 0-.7733.6269-1.4002 1.4002-1.4002H36.422l-3.2105-3.2105ZM9.5775 28.5688l3.2106-3.2105c.5468-.5469.5468-1.4334 0-1.9802-.5468-.5469-1.4334-.5469-1.9802 0l-5.601 5.6008a1.3963 1.3963 0 0 0-.41.9902 1.3959 1.3959 0 0 0 .41.9901l5.601 5.6009c.5468.5468 1.4334.5468 1.9802 0 .5468-.5469.5468-1.4334 0-1.9802l-3.2106-3.2106h19.0232c.7733 0 1.4002-.6269 1.4002-1.4002 0-.7734-.6269-1.4003-1.4002-1.4003H9.5775Z'/%3E%3C/svg%3E");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: clamp(40px, 3.125vw, 45px);
+            height: clamp(40px, 3.125vw, 45px);
+            bottom: 5px;
+            right: calc(clamp(42px, 3.4722vw, 50px) * -1);
+            pointer-events: none;
+
+            @include laptop{
+              bottom: 8px;
+            }
+
+            @include small-tablet{
+              display: none;
+            }
+          }
+        }
+      }
+    }
+
+    & + .wpcf7{
+      .main-form{
+        grid-gap: 15px clamp(42px, 3.4722vw, 50px);
+      }
+    }
   }
 }
 

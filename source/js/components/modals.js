@@ -30,7 +30,7 @@ class ModalManager {
   }
 
   closeModal() {
-    this.activeMode && removeCustomClass(this.overlay, this.activeMode);
+    removeCustomClass(this.overlay, this.activeMode);
     removeCustomClass(this.overlay, this.activeClass);
     removeClassInArray(this.modals, this.activeClass);
     this.modals.forEach(modal => fadeOut(modal, this.timeOut));
@@ -52,7 +52,7 @@ class ModalManager {
     this.burger && removeClassInArray(this.burger, this.activeClass);
     removeClassInArray(this.modals, this.activeClass);
     addCustomClass(this.overlay, this.activeClass);
-    this.activeMode && addCustomClass(this.overlay, this.activeMode);
+    addCustomClass(this.overlay, this.activeMode);
     addCustomClass(modal, this.activeClass);
     fadeIn(modal, this.timeIn, 'flex');
     disableScroll();
