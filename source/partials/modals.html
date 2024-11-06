@@ -308,38 +308,54 @@
             </div>
 
             <div class="main-form__field">
-              <span class="main-form__title">Я купую</span>
+              <span class="main-form__title">Я продаю</span>
 
-              <div class="select" data-select>
-                <div class="select__header">
-                  <input type="hidden" class="select__input input-select" id="country" name="country" value="1">
-                  <span class="select__current" data-id="1">
-                    <img width="20" height="14" src="./img/flags/DK.svg" alt="image">
-                    Данія
-                  </span>
-                  <svg class="select__current-icon" width='13' height='13'>
-                    <use href='img/sprite/sprite.svg#caret-down'></use>
-                  </svg>
-                </div>
-                <div class="select__body">
-                  <ul class="select__list">
-                    <li class="select__option" data-id="1" data-type="option">
-                      <img width="20" height="14" src="./img/flags/DK.svg" alt="image">
-                      Данія
-                    </li>
-                    <li class="select__option" data-id="2" data-type="option">
-                      <img width="20" height="14" src="./img/flags/HU.svg" alt="image">
-                      Hungary
-                    </li>
-                    <li class="select__option" data-id="3" data-type="option">
-                      <img width="20" height="14" src="./img/flags/PL.svg" alt="image">
-                      Poland
-                    </li>
-                    <li class="select__option" data-id="4" data-type="option">
+              <div class="main-form__inner">
+                <label class="main-form__label" for="value_3">
+                  <input class="main-form__input" id="value_3" name="value_3" value="41100" type="number">
+
+                  <button class="main-form__delete">
+                    <svg width='13' height='13'>
+                      <use href='img/sprite/sprite.svg#close2'></use>
+                    </svg>
+                  </button>
+                </label>
+
+                <div class="select" data-select>
+                  <div class="select__header">
+                    <input type="hidden" class="select__input input-select" id="currency" name="currency" value="3">
+                    <span class="select__current" data-id="1">
                       <img width="20" height="14" src="./img/flags/GB.svg" alt="image">
-                      UK
-                    </li>
-                  </ul>
+                      GBR
+                    </span>
+                    <svg class="select__current-icon" width='13' height='13'>
+                      <use href='img/sprite/sprite.svg#caret-down'></use>
+                    </svg>
+                  </div>
+                  <div class="select__body">
+                    <ul class="select__list">
+                      <li class="select__option" data-id="1" data-type="option">
+                        <img width="20" height="14" src="./img/flags/US.svg" alt="image">
+                        USD
+                      </li>
+                      <li class="select__option" data-id="2" data-type="option">
+                        <img width="20" height="14" src="./img/flags/PL.svg" alt="image">
+                        PLN
+                      </li>
+                      <li class="select__option" data-id="3" data-type="option">
+                        <img width="20" height="14" src="./img/flags/GB.svg" alt="image">
+                        GBR
+                      </li>
+                      <li class="select__option" data-id="4" data-type="option">
+                        <img width="20" height="14" src="./img/flags/DK.svg" alt="image">
+                        DKK
+                      </li>
+                      <li class="select__option" data-id="5" data-type="option">
+                        <img width="20" height="14" src="./img/flags/HU.svg" alt="image">
+                        HUF
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
